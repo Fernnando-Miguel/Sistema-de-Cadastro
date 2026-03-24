@@ -14,6 +14,7 @@ void cadastrar_usuario() {
 
     printf("Digite seu ID: \n");
     scanf("%d", &usuario.id);
+    getchar();
 
     printf("Digite seu nome: \n");
     scanf(" %[^\n]", usuario.nome);
