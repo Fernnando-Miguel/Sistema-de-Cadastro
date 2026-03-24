@@ -39,6 +39,7 @@ int main() {
     int opcao = 0;
 
     while (opcao != 3) {
+        printf("====MENU====\n");
         printf("1. Cadastrar Usuario \n");
         printf("2. Mostrar Usuarios cadastrados \n");
         printf("3. Sair \n");
