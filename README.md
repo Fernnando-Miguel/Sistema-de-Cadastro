@@ -9,6 +9,7 @@ Projeto simples de cadastro de usuários desenvolvido em linguagem C, utilizando
 * Cadastro de usuário (ID, nome, idade e e-mail)
 * Exibição dos dados cadastrados
 * Menu interativo com opções
+* Validação básica para evitar exibição sem cadastro
 
 ---
 
@@ -19,6 +20,17 @@ Projeto simples de cadastro de usuários desenvolvido em linguagem C, utilizando
 * Laços de repetição (`while`)
 * Estrutura de decisão (`switch`)
 * Entrada de dados com `scanf`
+* Organização básica de código
+* Controle de estado (variável de cadastro)
+
+---
+
+## ⚙️ Melhorias implementadas
+
+* Correção de bugs de entrada com `getchar()`
+* Melhor organização do menu e mensagens
+* Validação para impedir exibição sem usuário cadastrado
+* Código mais legível e padronizado
 
 ---
 
@@ -48,7 +60,7 @@ No Linux/Mac:
 
 ## 📌 Versão
 
-**v1.0** – Primeira versão funcional do sistema de cadastro
+**v1.1** – Correções de bugs e melhorias na estrutura do código
 
 ---
 
@@ -58,6 +70,7 @@ No Linux/Mac:
 * [ ] Busca de usuário por ID
 * [ ] Remoção de usuário
 * [ ] Armazenamento em arquivo
+* [ ] Separação do código em múltiplos arquivos (.c e .h)
 
 ---
 
@@ -70,3 +83,9 @@ Fernnando Miguel
 ## 📖 Observação
 
 Este projeto foi desenvolvido com fins de aprendizado, focando nos conceitos básicos da linguagem C e lógica de programação.
+
+---
+
+## ⭐ Objetivo
+
+Este projeto faz parte da minha evolução como programador, com foco em boas práticas e organização de código.
