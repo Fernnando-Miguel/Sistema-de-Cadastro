@@ -8,9 +8,10 @@ struct Usuario {
 };
 
 struct Usuario usuario;
+int cadastrado = 0;
 
 void cadastrar_usuario() {
-    printf("====Cadastrando====\n");
+    printf("\n ==== Cadastro do Usuario ====\n");
 
     printf("Digite seu ID: \n");
     scanf("%d", &usuario.id);
@@ -21,25 +22,36 @@ void cadastrar_usuario() {
 
     printf("Digite sua idade: \n");
     scanf("%d", &usuario.idade);
+    getchar();
 
     printf("Digite seu e-mail: \n");
     scanf(" %[^\n]", usuario.email);
+
+    cadastrado = 1;
 }
 void mostrar_usuario() {
-    printf("====Mostrando Usuarios====\n");
+
+    if (!cadastrado) {
+        printf("Nenhum usuario cadastrado! \n");
+        return;
+    } else {
+
+    printf("\n ==== Dados do Usuario ==== \n");
 
     printf("ID: %d\n Nome: %s\n Idade: %d\n E-mail: %s\n",
     usuario.id,
     usuario.nome,
     usuario.idade,
     usuario.email);
+
+    }
 }
 
 int main() {
     int opcao = 0;
 
     while (opcao != 3) {
-        printf("\n ====MENU==== \n");
+        printf("\n ==== MENU ==== \n");
         printf("1- Cadastrar Usuario \n");
         printf("2- Mostrar Usuarios cadastrados \n");
         printf("3- Sair \n");
@@ -62,13 +74,13 @@ int main() {
 
         case 3:
 
-        printf("Encerrando Programa... \n");
+        printf("\n Encerrando Programa... \n");
 
         break;
 
         default:
 
-        printf("Opcao invalida\n");
+        printf("\n Opcao invalida\n");
 
     }
 }
