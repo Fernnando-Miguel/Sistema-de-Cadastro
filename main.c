@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <string.h>
+#include <locale.h>
+#include <windows.h>
 
 struct Usuario {
     int id;
@@ -52,11 +54,13 @@ void mostrar_usuario() {
 }
 
 int main() {
+      SetConsoleOutputCP(65001);
+    setlocale (LC_ALL, "pt_BR.UTF-8");
     int opcao = 0;
 
     while (opcao != 3) {
         printf("\n ==== MENU ==== \n");
-        printf("1- Cadastrar Usuario \n");
+        printf("1- Cadastrar Usuário \n");
         printf("2- Mostrar Usuario(s) cadastrados \n");
         printf("3- Sair \n");
         printf("Escolha uma opcao: ");
