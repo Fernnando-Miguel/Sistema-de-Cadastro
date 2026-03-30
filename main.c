@@ -13,58 +13,24 @@ struct Usuario {
     struct Usuario usuario;
 bool cadastrado = false;
 
-void cadastrar_usuario() {
-    printf("\n ==== Cadastro do Usuario ====\n");
-
-    printf("Digite seu ID: \n");
-    scanf("%d", &usuario.id);
-    while (getchar() != '\n');
-
-    printf("Digite seu nome: \n");
-    fgets(usuario.nome, 70, stdin);
-    usuario.nome[strcspn(usuario.nome, "\n")] = '\0';
-
-    printf("Digite sua idade: \n");
-    scanf("%d", &usuario.idade);
-    while (getchar() != '\n');
-    
-
-    printf("Digite seu e-mail: \n");
-    fgets(usuario.email, 70, stdin);
-    usuario.email[strcspn(usuario.email, "\n")] = '\0';
-
-    cadastrado = true;
-}
-void mostrar_usuario() {
-
-    if (!cadastrado) {
-        printf("Nenhum usuario cadastrado! \n");
-        return;
-    } else {
-
-    printf("\n ==== Dados do Usuario ==== \n");
-
-    printf("ID: %d\n Nome: %s\n Idade: %d\n E-mail: %s\n",
-    usuario.id,
-    usuario.nome,
-    usuario.idade,
-    usuario.email);
-
-    }
-}
-
-int main() {
-      SetConsoleOutputCP(65001);
-    setlocale (LC_ALL, "pt_BR.UTF-8");
-    int opcao = 0;
+void menu() {
+     int opcao = 0;
 
     while (opcao != 3) {
         printf("\n ==== MENU ==== \n");
         printf("1- Cadastrar Usuário \n");
-        printf("2- Mostrar Usuario(s) cadastrados \n");
+        printf("2- Mostrar Usuário(s) cadastrados \n");
         printf("3- Sair \n");
-        printf("Escolha uma opcao: ");
+        printf("Escolha uma opção: ");
         scanf("%d", &opcao);
+
+         if (scanf("%d", &opcao) != 1) {
+        printf("\nEntrada inválida! Digite um número.\n");
+        while (getchar() != '\n'); // limpa erro
+        continue;
+    }
+
+    while (getchar() != '\n'); // limpa buffer
 
     switch (opcao) {
 
@@ -88,10 +54,58 @@ int main() {
 
         default:
 
-        printf("\n Opcao invalida\n");
+        printf("\n Opção inválida\n");
 
     }
 }
+
+}
+
+void cadastrar_usuario() {
+    printf("\n ==== Cadastro do Usuário ====\n");
+
+    printf("Digite seu ID: \n");
+    scanf("%d", &usuario.id);
+    while (getchar() != '\n');
+
+    printf("Digite seu nome: \n");
+    fgets(usuario.nome, 70, stdin);
+    usuario.nome[strcspn(usuario.nome, "\n")] = '\0';
+
+    printf("Digite sua idade: \n");
+    scanf("%d", &usuario.idade);
+    while (getchar() != '\n');
+    
+
+    printf("Digite seu e-mail: \n");
+    fgets(usuario.email, 70, stdin);
+    usuario.email[strcspn(usuario.email, "\n")] = '\0';
+
+    cadastrado = true;
+}
+void mostrar_usuario() {
+
+    if (!cadastrado) {
+        printf("Nenhum usuário cadastrado! \n");
+        return;
+    } else {
+
+    printf("\n ==== Dados do Usuário ==== \n");
+
+    printf("ID: %d\n Nome: %s\n Idade: %d\n E-mail: %s\n",
+    usuario.id,
+    usuario.nome,
+    usuario.idade,
+    usuario.email);
+
+    }
+}
+
+int main() {
+      SetConsoleOutputCP(65001);
+    setlocale (LC_ALL, "pt_BR.UTF-8");
+
+    menu();
 
     return 0;
 }
