@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
 
 struct Usuario {
     int id;
@@ -6,28 +8,30 @@ struct Usuario {
     char nome[70];
     char email[70];
 };
-
-struct Usuario usuario;
-int cadastrado = 0;
+    struct Usuario usuario;
+bool cadastrado = false;
 
 void cadastrar_usuario() {
     printf("\n ==== Cadastro do Usuario ====\n");
 
     printf("Digite seu ID: \n");
     scanf("%d", &usuario.id);
-    getchar();
+    while (getchar() != '\n');
 
     printf("Digite seu nome: \n");
-    scanf(" %[^\n]", usuario.nome);
+    fgets(usuario.nome, 70, stdin);
+    usuario.nome[strcspn(usuario.nome, "\n")] = '\0';
 
     printf("Digite sua idade: \n");
     scanf("%d", &usuario.idade);
-    getchar();
+    while (getchar() != '\n');
+    
 
     printf("Digite seu e-mail: \n");
-    scanf(" %[^\n]", usuario.email);
+    fgets(usuario.email, 70, stdin);
+    usuario.email[strcspn(usuario.email, "\n")] = '\0';
 
-    cadastrado = 1;
+    cadastrado = true;
 }
 void mostrar_usuario() {
 
