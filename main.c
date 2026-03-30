@@ -57,7 +57,7 @@ int main() {
     while (opcao != 3) {
         printf("\n ==== MENU ==== \n");
         printf("1- Cadastrar Usuario \n");
-        printf("2- Mostrar Usuarios cadastrados \n");
+        printf("2- Mostrar Usuario(s) cadastrados \n");
         printf("3- Sair \n");
         printf("Escolha uma opcao: ");
         scanf("%d", &opcao);
