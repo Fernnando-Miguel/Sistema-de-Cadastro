@@ -22,15 +22,15 @@ void menu() {
         printf("2- Mostrar Usuário(s) cadastrados \n");
         printf("3- Sair \n");
         printf("Escolha uma opção: ");
-        scanf("%d", &opcao);
 
-         if (scanf("%d", &opcao) != 1) {
-        printf("\nEntrada inválida! Digite um número.\n");
-        while (getchar() != '\n'); // limpa erro
-        continue;
-    }
+        if (scanf("%d", &opcao) != 1) {
+            printf("\nEntrada inválida \n Digite um número ");
+            while (getchar() != '\n');
+            continue;
+        }
 
-    while (getchar() != '\n'); // limpa buffer
+        while (getchar() != '\n');
+
 
     switch (opcao) {
 
